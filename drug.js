@@ -14,7 +14,7 @@ export class Drug {
         }
     }
 
-    modifybenefitUpdateRate() {
+    modifyBenefitUpdateRate() {
         if (this.expiresIn == 0) {
             this.benefitUpdateRate = this.benefitUpdateRate * 2;
         }
@@ -27,7 +27,7 @@ export class Drug {
             this.benefit -= this.benefitUpdateRate;
         }
         this.expiresIn -= 1;
-        this.modifybenefitUpdateRate()
+        this.modifyBenefitUpdateRate()
     }
   }
 
@@ -43,7 +43,7 @@ class HerbalTea extends Drug {
             this.benefit += this.benefitUpdateRate;
         }
         this.expiresIn -= 1;
-        this.modifybenefitUpdateRate()
+        this.modifyBenefitUpdateRate()
     }
 }
 
@@ -63,10 +63,10 @@ class Fervex extends Drug {
         super(name, expiresIn, benefit)
     }
 
-    modifybenefitUpdateRate() {
+    modifyBenefitUpdateRate() {
         if (this.expiresIn <= 10 && this.expiresIn > 5) {
             this.benefitUpdateRate = 2;
-        } else if (this.expiresIn <= 5 && this.expiredRate > 0) {
+        } else if (this.expiresIn <= 5 && this.expiresIn >= 0) {
             this.benefitUpdateRate = 3;
         } else if (this.expiresIn < 0) {
             this.benefitUpdateRate = 0;
@@ -82,7 +82,7 @@ class Fervex extends Drug {
             this.benefit = 0
         }
         this.expiresIn -= 1;
-        this.modifybenefitUpdateRate()
+        this.modifyBenefitUpdateRate()
     }
 }
 

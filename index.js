@@ -8,6 +8,7 @@ const drugs = [
   new Drug("Herbal Tea", 10, 5),
   new Drug("Fervex", 12, 35),
   new Drug("Magic Pill", 15, 40),
+  new Drug("Dafalgan", 10, 50)
 ];
 const pharmacy = new Pharmacy(drugs);
 
@@ -19,7 +20,7 @@ for (let elapsedDays = 0; elapsedDays < 30; elapsedDays++) {
 
 /* eslint-disable no-console */
 fs.writeFile(
-  "test.json",
+  "result.json",
   JSON.stringify({ result: log }, null, 2).concat("\n"),
   (err) => {
     if (err) {
